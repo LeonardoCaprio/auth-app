@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Navigator from './src/navigation';
+import { AuthProvider } from './src/context/Auth';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -13,9 +14,11 @@ function App() {
         backgroundColor="transparent"
         translucent
       />
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
+      <AuthProvider>
+        <NavigationContainer>
+          <Navigator />
+        </NavigationContainer>
+      </AuthProvider>
     </SafeAreaProvider>
   );
 }

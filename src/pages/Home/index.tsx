@@ -1,11 +1,16 @@
-import { Text } from "react-native";
+import { Text, TouchableOpacity } from 'react-native';
+import { useAuth } from '../../context/Auth';
 
 const Home = () => {
-    return (
-        <>
-        <Text>Home</Text>
-        </>
-    )
-}
+  const { logout } = useAuth();
+  return (
+    <>
+      <Text>Home</Text>
+      <TouchableOpacity onPress={() => logout()}>
+        <Text>Sign Out</Text>
+      </TouchableOpacity>
+    </>
+  );
+};
 
 export default Home;
