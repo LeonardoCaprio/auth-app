@@ -2,10 +2,11 @@ import { Text, TouchableOpacity } from 'react-native';
 import { useAuth } from '../../context/Auth';
 
 const Home = () => {
-  const { logout } = useAuth();
+  const { logout, userInfo } = useAuth();
   return (
     <>
       <Text>Home</Text>
+      <Text>Welcome, {userInfo?.username}</Text>
       <TouchableOpacity onPress={() => logout()}>
         <Text>Sign Out</Text>
       </TouchableOpacity>
