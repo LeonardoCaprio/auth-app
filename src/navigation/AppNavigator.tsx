@@ -9,7 +9,12 @@ const AppStack = createNativeStackNavigator<AppStackParamList>();
 
 const AppNavigator = () => {
   return (
-    <AppStack.Navigator>
+    <AppStack.Navigator screenOptions={{
+      headerShown: false,
+      contentStyle: {
+        backgroundColor: 'transparent',
+       },
+    }}>
       <AppStack.Screen name="Home" component={Home} />
     </AppStack.Navigator>
   );
